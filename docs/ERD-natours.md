@@ -1,5 +1,7 @@
 # ERD: Natours
 
+This document explores the design of Natours.
+
 ## Schema
 
 **Tour**:
