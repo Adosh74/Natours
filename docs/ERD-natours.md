@@ -1,6 +1,7 @@
 # ERD: Natours
 
-This document explores the design of Natours.
+This document explores the design of Natours project.
+
 
 ## Schema
 
