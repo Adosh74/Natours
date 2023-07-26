@@ -6,7 +6,7 @@
     "scripts": {
         "start:dev": "nodemon server.js",
         "debug": "ndb server.js",
-        "start:prod": "set NODE_ENV=production && node server.js",
+        "start:prod": "set NODE_ENV=production&& node server.js",
         "delete:tours": "node dev-data/import-dev-data.js --delete",
         "import:tours": "node dev-data/import-dev-data.js --import"
     },
