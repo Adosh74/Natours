@@ -4,9 +4,19 @@ This document explores the design of Natours project.
 
 ## Schema
 
-**Tour**:
+**User:**
 
-| Column          | Type     |
+| **Column**      | **Type** |
+| --------------- | -------- |
+| name            | String   |
+| email           | String   |
+| photo           | String   |
+| password        | String   |
+| passwordConfirm | String   |
+
+**Tour:**
+
+| **Column**      | **Type** |
 | --------------- | -------- |
 | name            | String   |
 | duration        | Number   |
