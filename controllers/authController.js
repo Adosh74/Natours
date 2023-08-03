@@ -16,6 +16,7 @@ exports.signup = catchAsync(async (req, res, next) => {
         photo: req.body.photo,
         password: req.body.password,
         passwordConfirm: req.body.passwordConfirm,
+        role: req.body.role,
     });
 
     const token = signToken(newUser._id);
@@ -84,12 +85,29 @@ exports.protect = catchAsync(async (req, res, next) => {
         );
     }
     // +[4] Check if user changed password after the token was issued
-    if (freshUser.passwordChangedAfter) {
+    if (freshUser.passwordChangedAfter(decoded.iat)) {
         return next(
-            AppError('User recently changed password! Please login again', 401),
+            new AppError(
+                'User recently changed password! Please login again',
+                401,
+            ),
         );
     }
 
     req.user = freshUser;
     next();
 });
+
+exports.restrictTo =
+    (...roles) =>
+    (req, res, next) => {
+        if (!roles.includes(req.user.role)) {
+            return next(
+                new AppError(
+                    'You do not have permission to perform this action',
+                ),
+            );
+        }
+
+        next();
+    };
