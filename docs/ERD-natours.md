@@ -6,13 +6,18 @@ This document explores the design of Natours project.
 
 **User:**
 
-| **Column**      | **Type** |
-| --------------- | -------- |
-| name            | String   |
-| email           | String   |
-| photo           | String   |
-| password        | String   |
-| passwordConfirm | String   |
+| **Column**           | **Type**     |
+| -------------------- | ------------ |
+| name                 | String       |
+| email                | String       |
+| photo                | String       |
+| role                 | ENUM[String] |
+| password             | String       |
+| passwordConfirm      | String       |
+| passwordChangedAt    | Date         |
+| passwordResetToken   | String       |
+| passwordResetExpires | Date         |
+| active               | Boolean      |
 
 **Tour:**
 
