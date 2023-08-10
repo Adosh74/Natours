@@ -35,7 +35,7 @@ const tourSchema = new mongoose.Schema(
             type: String,
             required: [true, 'A tour must have a difficulty'],
             enum: {
-                values: ['easy', 'medium', 'difficulty'],
+                values: ['easy', 'medium', 'difficult'],
                 message: 'Difficulty is either: easy, medium, difficulty',
             },
         },
@@ -88,6 +88,29 @@ const tourSchema = new mongoose.Schema(
             type: Boolean,
             default: false,
         },
+        startLocation: {
+            type: {
+                type: String,
+                default: 'Point',
+                enum: ['Point'],
+            },
+            coordinates: [Number],
+            address: String,
+            description: String,
+        },
+        locations: [
+            {
+                type: {
+                    type: String,
+                    default: 'Point',
+                    enum: ['Point'],
+                },
+                coordinates: [Number],
+                address: String,
+                description: String,
+                day: Number,
+            },
+        ],
     },
     {
         toJSON: { virtuals: true },
@@ -124,7 +147,6 @@ tourSchema.pre(/^find/, function (next) {
 });
 
 tourSchema.post(/^find/, function (docs, next) {
-    console.log(`Query took ${Date.now() - this.start} milliseconds`);
     next();
 });
 
