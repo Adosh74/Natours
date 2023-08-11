@@ -1,0 +1,462 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Natours",
+    "dateExported": "2023-08-11T17:58:44.319Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "tours",
+            "containerId": "",
+            "created": "2023-06-17T17:44:27.421Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "ca5e1fe9-d663-4861-acda-626599cc5973",
+            "name": "users",
+            "containerId": "",
+            "created": "2023-06-17T17:44:55.289Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "8400c977-0a9f-4373-8192-d5ca056d40bf",
+            "name": "auth",
+            "containerId": "",
+            "created": "2023-07-31T14:00:06.989Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "177668af-9a01-4b10-b8e9-9c002428a38b",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "get all tours",
+            "url": "{{url}}/api/v1/tours",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-16T23:03:08.623Z",
+            "modified": "2023-08-04T15:54:24.400Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "difficulty",
+                    "value": "easy",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "5",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "duration[gte]",
+                    "value": "5",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "price[lt]",
+                    "value": "1500",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "sort",
+                    "value": "-price,-ratingsAverage",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "fields",
+                    "value": "-ratingsAverage,-difficulty,-price",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "3",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2e56b315-a2e1-4452-812d-271b0a3c769e",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "Top Five Tours",
+            "url": "{{url}}/api/v1/tours/top-5-cheap",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2023-06-26T18:24:19.551Z",
+            "modified": "2023-07-01T06:13:26.890Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a4d5da0f-e3ac-4b22-ac6f-b10deacfe102",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "monthly plan",
+            "url": "{{url}}/api/v1/tours/monthly-plan/2021",
+            "method": "GET",
+            "sortNum": 16250,
+            "created": "2023-06-29T18:11:46.445Z",
+            "modified": "2023-07-01T06:12:38.400Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "31b050c8-43a5-4883-a8cb-b35f0ea770c7",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "tour stats",
+            "url": "{{url}}/api/v1/tours/tour-stats",
+            "method": "GET",
+            "sortNum": 17500,
+            "created": "2023-06-28T20:46:41.628Z",
+            "modified": "2023-07-01T06:13:40.626Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e96b3fcb-d859-45c3-98fb-cab3cb7f4364",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "delete tour",
+            "url": "{{url}}/api/v1/tours/64d54561c6a987192422b1ee",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2023-06-17T01:11:49.866Z",
+            "modified": "2023-08-10T20:16:02.318Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "4cf60b6c-03b7-4bc0-91d9-09a9ae25f609",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "get specific tour",
+            "url": "{{url}}/api/v1/tours/64d545b2f038882c342b7ccc",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-17T00:35:49.364Z",
+            "modified": "2023-08-11T04:07:13.475Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7e25b8c5-cd32-43d6-9d2d-794408b7f5c5",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "ca5e1fe9-d663-4861-acda-626599cc5973",
+            "name": "get all users",
+            "url": "{{url}}/api/v1/users",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-17T17:53:11.689Z",
+            "modified": "2023-07-01T06:14:38.148Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ff77e3e5-2b05-4217-b467-519e82fd9805",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "create new tour",
+            "url": "{{url}}/api/v1/tours",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-16T23:03:35.108Z",
+            "modified": "2023-08-10T19:39:35.083Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"name\": \"New Test Tour\",\n    \"duration\": 1,\n    \"maxGroupSize\": 1,\n    \"difficulty\": \"easy\",\n    \"ratingsQuantity\": 13,\n    \"price\": 200,\n    \"priceDiscount\": 100,\n    \"summary\": \"Exciting adventure in the snow with snowboarding and skiing\",\n    \"ratingsAverage\": 4,\n    \"imageCover\": \"tour-3-cover.jpg\",\n    \"guides\": [\"64d131795d43470d98098f0f\", \"64cc10e2ae14ca42c02f2c69\"]\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "dad3f3bc-f8ea-4901-9d42-d3b2813b8e39",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "ca5e1fe9-d663-4861-acda-626599cc5973",
+            "name": "create user",
+            "url": "{{url}}/api/v1/users",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-17T17:53:44.943Z",
+            "modified": "2023-07-01T06:14:47.000Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bed63a30-2aca-4335-aafe-f04a4a5d58ed",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "ca5e1fe9-d663-4861-acda-626599cc5973",
+            "name": "delete user",
+            "url": "{{url}}/api/v1/users/3",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2023-06-17T17:56:00.667Z",
+            "modified": "2023-07-01T06:14:52.510Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "74d9d370-b9cd-473e-8fa3-1129071046cd",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "44d2f7d4-a520-42b6-90ec-286282098b9e",
+            "name": "update tour",
+            "url": "{{url}}/api/v1/tours/64d545b2f038882c342b7ccc",
+            "method": "PATCH",
+            "sortNum": 50000,
+            "created": "2023-06-17T01:09:28.014Z",
+            "modified": "2023-08-11T04:26:51.223Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"guides\": [\n    \"64d131795d43470d98098f0f\", \n    \"64cc10e2ae14ca42c02f2c69\",\n    \"64cc10a0b721d61b0c24fe9f\"]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "51daadc7-e4ad-4d22-957d-b582bd5bf64f",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "ca5e1fe9-d663-4861-acda-626599cc5973",
+            "name": "get user",
+            "url": "{{url}}/api/v1/users/1",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2023-06-17T17:53:47.511Z",
+            "modified": "2023-07-01T06:14:58.301Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0ec0bf10-0308-4a8a-97f8-9dde1a7ee57f",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "ca5e1fe9-d663-4861-acda-626599cc5973",
+            "name": "update user",
+            "url": "{{url}}/api/v1/users/2",
+            "method": "PATCH",
+            "sortNum": 60000,
+            "created": "2023-06-17T17:53:50.129Z",
+            "modified": "2023-07-01T06:15:04.638Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "12d55fab-9d58-4413-8646-6db2617e79cc",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "",
+            "name": "orginal-get all tours",
+            "url": "https://www.natours.dev/api/v1/tours",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2023-06-22T13:45:17.037Z",
+            "modified": "2023-06-22T13:45:29.955Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f647ed83-c31e-4bfd-b50a-65b611a5e530",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "ca5e1fe9-d663-4861-acda-626599cc5973",
+            "name": "update me",
+            "url": "{{url}}/api/v1/users/updateMe",
+            "method": "PATCH",
+            "sortNum": 70000,
+            "created": "2023-08-06T15:02:44.977Z",
+            "modified": "2023-08-06T15:58:05.179Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"after new route\",\n  \"role\": \"admin\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt}}"
+            },
+            "tests": []
+        },
+        {
+            "_id": "eb2963b2-1a46-473e-89d1-47c9929124c3",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "8400c977-0a9f-4373-8192-d5ca056d40bf",
+            "name": "signup",
+            "url": "{{url}}/api/v1/users/signup",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-07-31T14:25:56.501Z",
+            "modified": "2023-08-09T03:36:39.746Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"<div>some bad code7</div>\",\n  \"email\": \"user6@gmail.com\",\n  \"photo\": \"dump string\",\n  \"password\": \"123456789\",\n  \"passwordConfirm\": \"123456789\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{jwt}}"
+                }
+            ]
+        },
+        {
+            "_id": "cc0e972a-6e53-435c-8f82-5d6561d5fe39",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "8400c977-0a9f-4373-8192-d5ca056d40bf",
+            "name": "login",
+            "url": "{{url}}/api/v1/users/login",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-08-02T13:59:22.203Z",
+            "modified": "2023-08-10T20:11:05.997Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"admin@gmail.com\",\n  \"password\": \"12345678\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{jwt}}"
+                }
+            ]
+        },
+        {
+            "_id": "a48945ad-9887-4a67-a114-9b55306996e5",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "8400c977-0a9f-4373-8192-d5ca056d40bf",
+            "name": "forgot password",
+            "url": "{{url}}/api/v1/users/forgotPassword",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-08-03T23:25:30.309Z",
+            "modified": "2023-08-04T15:51:48.816Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"admin@gmail.com\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "406dfdee-0611-49bf-8f53-d61a06b53a67",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "8400c977-0a9f-4373-8192-d5ca056d40bf",
+            "name": "Reset password",
+            "url": "{{url}}/api/v1/users/resetPassword/fd05960354c702f771738ca8344ad0ae68bc7a46be6bf559f4d34b8dfed7ee0f",
+            "method": "PATCH",
+            "sortNum": 110000,
+            "created": "2023-08-04T14:41:27.313Z",
+            "modified": "2023-08-04T15:55:29.429Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"12345678910\",\n  \"passwordConfirm\": \"12345678910\"\n}",
+                "form": []
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{jwt}}"
+                }
+            ]
+        },
+        {
+            "_id": "41e9e997-8009-477f-901e-2e4f7b7423ab",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "8400c977-0a9f-4373-8192-d5ca056d40bf",
+            "name": "update password",
+            "url": "{{url}}/api/v1/users/updateMyPassword",
+            "method": "PATCH",
+            "sortNum": 120000,
+            "created": "2023-08-06T02:31:43.699Z",
+            "modified": "2023-08-06T02:37:42.727Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"passwordCurrent\": \"12345678910\",\n  \"password\": \"12345678\",\n  \"passwordConfirm\": \"12345678\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt}}"
+            },
+            "tests": [
+                {
+                    "type": "set-env-var",
+                    "custom": "json.token",
+                    "action": "setto",
+                    "value": "{{jwt}}"
+                }
+            ]
+        },
+        {
+            "_id": "ad4cfc2d-3de8-4f60-9b12-87c1a9304c54",
+            "colId": "a8eaec22-ed2f-4cc0-bce8-746ada6829f2",
+            "containerId": "ca5e1fe9-d663-4861-acda-626599cc5973",
+            "name": "Delete me ",
+            "url": "{{url}}/api/v1/users/deleteMe",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2023-08-06T17:04:55.630Z",
+            "modified": "2023-08-06T17:05:51.842Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "{{jwt}}"
+            },
+            "tests": []
+        }
+    ]
+}
