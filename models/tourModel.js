@@ -40,6 +40,7 @@ const tourSchema = new mongoose.Schema(
                 message: 'Difficulty is either: easy, medium, difficulty',
             },
         },
+
         ratingsAverage: {
             type: Number,
             default: 4.5,
