@@ -39,6 +39,16 @@ This document explores the design of Natours project.
 
 ## API
 
+**Auth:**
+
+```
+/api/v1/users/signup [POST]
+/api/v1/users/login [POST]
+/api/v1/users/forgotPassword [POST]
+/api/v1/users/resetPassword/:token [PATCH]
+/api/v1/users/updateMyPassword [PATCH]
+```
+
 **tours:**
 
 ```
