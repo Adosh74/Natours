@@ -37,6 +37,16 @@ This document explores the design of Natours project.
 | images          | [String] |
 | startDates      | [Date]   |
 
+**Review:**
+
+| **Column** | **Type** |
+| ---------- | -------- |
+| review     | String   |
+| rating     | Number   |
+| createdAt  | Date     |
+| tour       | ObjectId |
+| user       | ObjectId |
+
 ## API
 
 **Auth:**
