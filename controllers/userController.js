@@ -20,6 +20,11 @@ exports.createUser = (req, res) => {
     });
 };
 
+exports.getMe = (req, res, next) => {
+    req.params.id = req.user.id;
+    next();
+};
+
 exports.updateMe = catchAsync(async (req, res, next) => {
     // +[1] send error if user send a password
     if (req.body.password || req.body.passwordConfirm) {
