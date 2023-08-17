@@ -79,6 +79,7 @@ exports.getAll = (Model) =>
             .limitFields();
 
         //* Execute the query *\\
+        //const docs = await features.query.explain();
         const docs = await features.query;
         res.status(200).json({
             status: 'success',
