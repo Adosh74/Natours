@@ -27,6 +27,8 @@ router
     .route('/tour-within/:distance/center/:latlong/unit/:unit')
     .get(tourController.getTourWithin);
 
+router.route('/distances/:latlong/unit/:unit').get(tourController.getDistances);
+
 router
     .route('/')
     .get(tourController.getAllTours)
