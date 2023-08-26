@@ -8,7 +8,9 @@
         "debug": "ndb server.js",
         "start:prod": "set NODE_ENV=production&& node server.js",
         "delete:data": "node dev-data/import-dev-data.js --delete",
-        "import:data": "node dev-data/import-dev-data.js --import"
+        "import:data": "node dev-data/import-dev-data.js --import",
+        "watch:js": "parcel watch public/js/index.js --out-dir public/js --out-file bundle.js",
+        "build:js": "parcel watch public/js/index.js --out-dir public/js --out-file bundle.js"
     },
     "author": "Mohamed Shebl",
     "license": "ISC",
@@ -41,6 +43,7 @@
         "eslint-plugin-prettier": "^4.2.1",
         "eslint-plugin-react": "^7.32.2",
         "nodemon": "^3.0.1",
+        "parcel": "^2.9.3",
         "prettier": "^2.8.8"
     },
     "engines": {
