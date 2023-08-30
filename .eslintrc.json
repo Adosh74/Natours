@@ -17,6 +17,9 @@
         "prefer-object-spread": "off",
         "prefer-const": "off",
         "prefer-arrow-callback": "off",
+        "parserOptions": {
+            "sourceType": "module"
+        },
         // "import/no-extraneous-dependencies": "Off",
         "prefer-destructuring": ["error", { "object": true, "array": false }],
         "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }]
