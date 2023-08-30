@@ -9,8 +9,8 @@
         "start:prod": "set NODE_ENV=production&& node server.js",
         "delete:data": "node dev-data/import-dev-data.js --delete",
         "import:data": "node dev-data/import-dev-data.js --import",
-        "watch:js": "parcel watch ./public/js/index.js --dist-dir ./public/js --dist-file bundle.js",
-        "build:js": "parcel watch public/js/index.js --out-dir public/js --out-file bundle.js"
+        "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
+        "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
     },
     "author": "Mohamed Shebl",
     "license": "ISC",
