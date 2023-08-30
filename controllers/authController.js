@@ -36,6 +36,15 @@ const createSendToken = (user, statusCode, res) => {
     });
 };
 
+exports.logout = (req, res) => {
+    res.cookies('JWT', 'loggedout', {
+        expires: new Date(Date.now() + 10 * 1000),
+        httpOnly: true,
+    });
+
+    res.status(200).json({ status: 'success' });
+};
+
 exports.signup = catchAsync(async (req, res, next) => {
     const newUser = await User.create({
         name: req.body.name,
@@ -123,6 +132,9 @@ exports.isLoggedIn = catchAsync(async (req, res, next) => {
             req.cookies.JWT,
             process.env.JWT_SECRET,
         );
+        if (!decoded) {
+            return next();
+        }
 
         // +[3] Check if user still exist
         const freshUser = await User.findById(decoded.id);
