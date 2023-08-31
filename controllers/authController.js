@@ -37,7 +37,7 @@ const createSendToken = (user, statusCode, res) => {
 };
 
 exports.logout = (req, res) => {
-    res.cookies('JWT', 'loggedout', {
+    res.cookie('JWT', 'loggedout', {
         expires: new Date(Date.now() + 10 * 1000),
         httpOnly: true,
     });
@@ -128,25 +128,26 @@ exports.isLoggedIn = catchAsync(async (req, res, next) => {
     // +[1] get the token and check if it's there
     if (req.cookies.JWT) {
         // +[2] Verification token
-        const decoded = await promisify(jwt.verify)(
-            req.cookies.JWT,
-            process.env.JWT_SECRET,
-        );
-        if (!decoded) {
-            return next();
-        }
+        try {
+            const decoded = await promisify(jwt.verify)(
+                req.cookies.JWT,
+                process.env.JWT_SECRET,
+            );
 
-        // +[3] Check if user still exist
-        const freshUser = await User.findById(decoded.id);
-        if (!freshUser) {
-            return next();
-        }
-        // +[4] Check if user changed password after the token was issued
-        if (freshUser.passwordChangedAfter(decoded.iat)) {
-            return next();
-        }
+            // +[3] Check if user still exist
+            const freshUser = await User.findById(decoded.id);
+            if (!freshUser) {
+                return next();
+            }
+            // +[4] Check if user changed password after the token was issued
+            if (freshUser.passwordChangedAfter(decoded.iat)) {
+                return next();
+            }
 
-        res.locals.user = freshUser;
+            res.locals.user = freshUser;
+        } catch (error) {
+            return next();
+        }
         return next();
     }
     next();

@@ -1,5 +1,11 @@
 # Natours
 
+-   [Natours](#natours)
+-   [Description](#description)
+-   [Documentation](#documentation)
+-   [Features](#features)
+-   [Dependencies](#dependencies)
+
 ## Description
 
 Natours is a tour booking website that allows users to book tours and manage their bookings. It is built using Node.js, Express, MongoDB, and Pug.
