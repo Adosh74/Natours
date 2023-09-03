@@ -53,7 +53,8 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 // parse body, into req.body and set max size to 10kb
-app.use(express.json({ limit: '10kb', extended: true }));
+app.use(express.json({ limit: '10kb' }));
+app.use(express.urlencoded({ extended: true, limit: '10kb' }));
 app.use(cookieParser());
 
 // Data Sanitization against NoSql query injection
@@ -78,7 +79,6 @@ app.use(
 
 app.use((req, res, next) => {
     req.requestTime = new Date().toISOString();
-    console.log(req.cookies);
     next();
 });
 
