@@ -1,4 +1,5 @@
 {
+    "root": true,
     "extends": ["airbnb", "prettier", "plugin:node/recommended"],
     "plugins": ["prettier"],
     "rules": {
@@ -17,9 +18,9 @@
         "prefer-object-spread": "off",
         "prefer-const": "off",
         "prefer-arrow-callback": "off",
-        "parserOptions": {
-            "sourceType": "module"
-        },
+        // "parserOptions": {
+        //     "ecmaVersion": 2018
+        // },
         // "import/no-extraneous-dependencies": "Off",
         "prefer-destructuring": ["error", { "object": true, "array": false }],
         "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }]
