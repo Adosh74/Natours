@@ -27,6 +27,8 @@ exports.getMe = (req, res, next) => {
 
 exports.updateMe = catchAsync(async (req, res, next) => {
     // +[1] send error if user send a password
+    console.log(req.file);
+    console.log(req.body);
     if (req.body.password || req.body.passwordConfirm) {
         return next(
             new AppError(
