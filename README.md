@@ -1,14 +1,15 @@
-# Natours
+# The Journey
 
--   [Natours](#natours)
+-   [The Journey](#The-Journey)
 -   [Description](#description)
 -   [Documentation](#documentation)
 -   [Features](#features)
+-   [Usage](#usage)
 -   [Dependencies](#dependencies)
 
 ## Description
 
-Natours is a tour booking website that allows users to book tours and manage their bookings. It is built using Node.js, Express, MongoDB, and Pug.
+The Journey is a tour booking website that allows users to book tours and manage their bookings. It is built using Node.js, Express, MongoDB, and Pug.
 
 ## Documentation
 
@@ -30,7 +31,49 @@ Natours is a tour booking website that allows users to book tours and manage the
 12. Advanced MongoDB
 13. Geospatial data
 14. Advanced mongoose features
-15. And much more!
+15. Image processing with sharp
+16. And much more!
+
+## Usage
+
+-   create config.env file in root folder and add the following
+
+```bash
+# Node Environment (development, production)
+NODE_ENV=
+PORT=
+# MongoDB  connection
+DATABASE=
+DATABASE_LOCAL=
+DATABASE_PASSWORD=
+
+# JWT config (secret, expires in, cookie expires in)
+JWT_SECRET=
+JWT_EXPIRES_IN=
+JWT_COOKIE_EXPIRES_IN=
+
+# Email config (host, port, username, password)
+EMAIL_USERNAME=
+EMAIL_PASSWORD=
+EMAIL_HOST=
+EMAIL_PORT=
+
+```
+
+-   Follow the steps below to run the project
+
+```bash
+# Install dependencies
+yarn install
+# Run in development
+yarn start:dev
+# Run in production
+yarn start:prod
+# Import data
+yarn import:data
+# Destroy data
+delete:data
+```
 
 ### Dependencies
 
