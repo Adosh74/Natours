@@ -12,7 +12,15 @@ module.exports = class email {
 
     newTransport() {
         if (process.env.NODE_ENV === 'production') {
-            return 1;
+            return nodemailer.createTransport({
+                service: 'mandrillapp',
+                host: process.env.SENDINBLUE_HOST,
+                port: process.env.SENDINBLUE_PORT,
+                auth: {
+                    user: process.env.SENDINBLUE_USERNAME,
+                    pass: process.env.SENDINBLUE_PASSWORD,
+                },
+            });
         }
         return nodemailer.createTransport({
             host: process.env.EMAIL_HOST,
