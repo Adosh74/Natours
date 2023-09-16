@@ -49,17 +49,17 @@ const sendErrorProd = (err, req, res) => {
             });
 
             //* If programming error *\\
-        } else {
-            //1) Log error
-            console.error('ERROR 💥', err);
-
-            //2) Send generic message
-            return res.status(500).json({
-                status: 'error',
-                message: 'Something went very wrong!',
-            });
         }
-    } else {
+        //1) Log error
+        console.error('ERROR 💥', err);
+
+        //2) Send generic message
+        return res.status(500).json({
+            status: 'error',
+            message: 'Something went very wrong!',
+        });
+    }
+    if (!req.originalUrl.startsWith('/api')) {
         if (err.isOperational) {
             return res.status(err.statusCode).render('error', {
                 title: 'Something went wrong!',
@@ -67,16 +67,15 @@ const sendErrorProd = (err, req, res) => {
             });
 
             //* If programming error *\\
-        } else {
-            //1) Log error
-            console.error('ERROR 💥', err);
-
-            //2) Send generic message
-            return res.status(err.statusCode).render('error', {
-                title: 'Something went wrong!',
-                message: 'Please try again later.',
-            });
         }
+        //1) Log error
+        console.error('ERROR 💥', err);
+
+        //2) Send generic message
+        return res.status(err.statusCode).render('error', {
+            title: 'Something went wrong!',
+            message: 'Please try again later.',
+        });
     }
 };
 
