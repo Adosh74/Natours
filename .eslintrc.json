@@ -22,7 +22,7 @@
         //     "ecmaVersion": 2018
         // },
         "sort-imports": 1,
-        // "import/no-extraneous-dependencies": "Off",
+        "import/no-extraneous-dependencies": "on",
         "prefer-destructuring": ["error", { "object": true, "array": false }],
         "no-unused-vars": ["error", { "argsIgnorePattern": "req|res|next|val" }]
     }
