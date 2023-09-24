@@ -11,17 +11,20 @@ const signToken = (id) =>
         expiresIn: process.env.JWT_EXPIRES_IN,
     });
 
-const createSendToken = (user, statusCode, req, res) => {
+const createSendToken = (user, statusCode, res) => {
     const token = signToken(user._id);
 
-    res.cookie('JWT', token, {
+    const cookieOption = {
         expires: new Date(
             Date.now() +
                 process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000,
         ),
         httpOnly: true,
-        secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
-    });
+    };
+
+    if (process.env.NODE_ENV === 'production') cookieOption.secure = true;
+
+    res.cookie('JWT', token, cookieOption);
 
     user.password = undefined;
     res.status(statusCode).json({
@@ -53,7 +56,7 @@ exports.signup = catchAsync(async (req, res, next) => {
     const url = `${req.protocol}://${req.get('host')}/me`;
     await new Email(newUser, url).sendWelcome();
 
-    createSendToken(newUser, 201, req, res);
+    createSendToken(newUser, 201, res);
 });
 
 exports.login = catchAsync(async (req, res, next) => {
